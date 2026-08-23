@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:         #faf4ed;
+    color:              #575279;
+    font-family:        'Libertinus Serif';
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    min-height:         100vh;
+    padding:            1.5rem;
+}
+
+.todo-card {
+    width:              100%;
+    max-width:          440px;
+    background:         #fffaf3;
+    border-radius:      10px;
+    padding:            2rem 1.8rem 2.2rem;
+    box-shadow:         0 4px 20px rgba(87, 82, 121, 0.06);
+    border:             0.4mm #d7827e dashed;
+}
+
+h1 {
+    font-weight:        300;
+    font-size:          1.8rem;
+    color:              #575279;
+    margin-bottom:      1.8rem;
+    padding-bottom:     0.5rem;
+    border-bottom:      1px solid #f2e9de;
+    letter-spacing:     -0.5px;
+}
+
+.input-area {
+    display:            flex;
+    gap:                0.5rem;
+    margin-bottom:      1.6rem;
+}
+
+#taskInput {
+    flex:                1;
+    background:         #fffaf3;
+    color:              #575279;
+    border:             1px solid #e0d5ca;
+    border-radius:      60px;
+    padding:            0.7rem 1.3rem;
+    font-size:          0.95rem;
+    outline:            none;
+    transition:         border 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #d7827e;
+}
+
+#taskInput::placeholder {
+    color: #b5ab9e;
+}
+
+#addBtn {
+    background:     #d7827e;
+    color:          #faf4ed;
+    border:         none;
+    border-radius:  60px;
+    width:          3rem;
+    font-size:      1.5rem;
+    font-weight:    300;
+    cursor:         pointer;
+    transition:     background 0.15s, transform 0.1s;
+}
+
+#addBtn:hover {
+    background:     #c46a67;
+    transform:      scale(0.95);
+}
+
+.stats {
+    display:            flex;
+    justify-content:    space-between;
+    font-size:          0.75rem;
+    color:              #797593;
+    padding:            0 0.1rem 0.8rem 0.1rem;
+    border-bottom:      1px solid #f2e9de;
+    margin-bottom:      1.2rem;
+}
+
+.task-list {
+    list-style:         none;
+    display:            flex;
+    flex-direction:     column;
+    overflow-y:         auto;
+    gap:                0.3rem;
+    padding-right:      0.2rem;
+    max-height:         340px;
+}
+
+.task-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.task-list::-webkit-scrollbar-track {
+    background:         #f2e9de;
+    border-radius:      10px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+    background:         #d6ccc0;
+    border-radius:      10px;
+}
+
+.task-item {
+    display:        flex;
+    align-items:    center;
+    gap:            0.6rem;
+    padding:        0.5rem 0.8rem 0.5rem 0.6rem;
+    background:     #faf4ed;
+    border-radius:  60px;
+    transition:     background 0.15s;
+}
+
+.task-item:hover {
+    background: #f5ede4;
+}
+
+.task-item .checkbox {
+    width:              1.2rem;
+    height:             1.2rem;
+    border-radius:      50%;
+    border:             2px solid #d6ccc0;
+    background:         #fffaf3;
+    cursor:             pointer;
+    flex-shrink:        0;
+    transition:         all 0.15s;
+    display:            flex;
+    align-items:        center;
+    justify-content:    center;
+}
+
+.task-item .checkbox.done {
+    background:         #d7827e;
+    border-color:       #d7827e;
+}
+
+.task-item .checkbox.done::after {
+    content:        "✓";
+    color:          #faf4ed;
+    font-size:      0.7rem;
+    font-weight:    600;
+}
+
+.task-item .task-text {
+    flex:           1;
+    font-size:      0.95rem;
+    color:          #575279;
+    word-break:      break-word;
+}
+
+.task-item .task-text.done-text {
+    text-decoration:    line-through;
+    color:              #b5ab9e;
+}
+
+.task-item .delete-btn {
+    background:         none;
+    border:             none;
+    font-size:          1rem;
+    color:              #b5ab9e;
+    cursor:             pointer;
+    padding:            0 0.2rem;
+    transition:         color 0.15s, transform 0.1s;
+    line-height:        1;
+}
+
+.task-item .delete-btn:hover {
+    color:      #d7827e;
+    transform:  scale(1.15);
+}
